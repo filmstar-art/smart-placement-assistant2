@@ -113,3 +113,12 @@ if st.button("Check Eligibility"):
             st.write('✓', company['name'])
     else:
             st.write('✗ No eligible companies found.')
+
+st.divider()
+st.header('Company Requirements')
+
+for company in companies:
+    with st.expander(company['name']):
+         st.write(f'**Minimum CGPA**', company['min_cgpa'])
+         st.write(f'**Maximum Backlogs**', company['max_backlogs'])
+         st.write(f'**Required Skills**',','.join(company['skills']))
